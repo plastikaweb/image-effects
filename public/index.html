@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Effects</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="flex items-center justify-center h-screen relative z-100">
+        <p class="mb-4">Image Effects</p>
+        <label for="upload" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
+            Upload Image
+            <input type="file" id="upload" accept=".png" class="hidden" />
+        </label>
+        <img id="new-img" class="w-auto mx-auto" alt="">
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
