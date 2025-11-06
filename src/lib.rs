@@ -9,7 +9,7 @@ use image::ImageFormat::Png;
 
 #[wasm_bindgen]
 
-pub fn grayscale(file: &str) {
+pub fn grayscale(file: &str) -> String {
     log(&"grayscale() called:".into());
 
     let base64_to_vector = BASE64_STANDARD.decode(file)
@@ -28,4 +28,12 @@ pub fn grayscale(file: &str) {
     image.write_to(&mut Cursor::new(&mut buffer), Png).unwrap();
 
     log(&"New image encoded to base64".into());
+
+    let encoded_image = BASE64_STANDARD.encode(&buffer);
+    let data_url = format!("data:image/png;base64,{}", encoded_image);
+
+    log(&"Data URL created".into());
+
+    return data_url;
 }
+

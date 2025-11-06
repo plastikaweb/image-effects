@@ -15,7 +15,10 @@ async function init() {
 
     reader.onloadend = () => {
         const base64 = reader.result.replace(/^data:image\/(png|jpg|jpeg);base64,/, '');
-        rustApp.grayscale(base64);
+        const imageDataUrl = rustApp.grayscale(base64);
+
+        const outputImage = document.getElementById('new-img');
+        outputImage.src = imageDataUrl;
     }
 
     input.addEventListener('change', () => {
